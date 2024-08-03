@@ -8,7 +8,7 @@
 
 <meta name="author" content="Kevin Li">
 <meta name="dcterms.date" content="2024-08-02">
-<meta name="description" content="DF140 Final Project Notebook">
+<meta name="description" content="DH140 Final Project Notebook">
 
 <title>Air Travel After COVID-19 – DH140 Final Project Blog</title>
 <style>
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -103,9 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -151,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Air Travel After COVID-19</h1>
                   <div>
         <div class="description">
-          DF140 Final Project Notebook
+          DH140 Final Project Notebook
         </div>
       </div>
                 </div>
@@ -212,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="air-travel-costs" class="level2">
 <h2 class="anchored" data-anchor-id="air-travel-costs">Air Travel Costs</h2>
 <p>Firstly, I would like to investigate how air travel costs have evolved the last few years. This gives us perspective on just how much air travel costs has actually changed. I will attempt to fetch the air fare history from the Bureau of Transportation Statistics (BTS) from 2019 to 2023. I will be using the average air fare data from the following link: &gt;<a href="https://www.transtats.bts.gov/AverageFare/">Average Air Fare (BTS)</a></p>
-<div id="10575ebc" class="cell" data-execution_count="318">
+<div id="10575ebc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -259,76 +256,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Fare ($)'</span>)</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Air Fare by Airport Code Q1 2024'</span>)</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="318">
+<div class="cell-output cell-output-display">
 <div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">2023 Passenger Rank</th>
-<th data-quarto-table-cell-role="th">Airport Code</th>
-<th data-quarto-table-cell-role="th">City Name</th>
-<th data-quarto-table-cell-role="th">State Name</th>
-<th data-quarto-table-cell-role="th">Average Fare ($)</th>
-<th data-quarto-table-cell-role="th">Inflation Adjusted Average Fare ($) (Base Quarter: Q1-2024)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>LAX</td>
-<td>Los Angeles</td>
-<td>CA</td>
-<td>402.12</td>
-<td>402.12</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>ORD</td>
-<td>Chicago-O'Hare</td>
-<td>IL</td>
-<td>404.95</td>
-<td>404.95</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>DEN</td>
-<td>Denver</td>
-<td>CO</td>
-<td>353.46</td>
-<td>353.46</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>ATL</td>
-<td>Atlanta</td>
-<td>GA</td>
-<td>417.79</td>
-<td>417.79</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>EWR</td>
-<td>Newark</td>
-<td>NJ</td>
-<td>432.68</td>
-<td>432.68</td>
-</tr>
-</tbody>
-</table>
-
+<figure class="figure">
+<p><img src="DH140_FPNB_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
 </div>
 <p>We can see that there is quite a variation in average airport fares across the United States. This makes sense as some airports are much more popular than other airports and the more popular ones are more likely to have the means to retain lower air fares. These numbers reflect also the up to date inflation for the US dollar. Not much can be concluded from this graph other than for exploration purposes. Thus, for comparison, let’s see what these same airports’ fares looked like in Q1 2019.</p>
-<div id="36f5aa54" class="cell" data-execution_count="320">
+<div id="36f5aa54" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://www.transtats.bts.gov/AverageFare/"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pd.options.mode.copy_on_write <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -386,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Surprisingly, after adjusting for inflation (by using the inflation adjusted column of the dataset) it seems that air fare tickets are actually less expensive today than it was in 2019! So contrary to negative sentiments you may see around the internet about air travel prices in the United States, it seems it is more affordable today to travel then it was in 2019. This means that the average passenger can afford to fly more often and farther, which in turn suggests the air travel experience is better now than it was pre-pandemic in regards to affordability and accessibility. This contradicts my hypothesis that air travel has significantly increased in price.</p>
 <p>Now let’s broaden the data, and take a look at how air travel fares have evolved from 2019 to 2024, comparing the fares annually from 2019 to 2023, excluding 2024 since 2024 has not yet ended. This should tell us a trend in air fares, which may hint to how the flying experience is changing for the average passenger. To do this, we must fetch tables for 2019 until 2023, and make a line plot showing the change of the values from each year onto the next. We will take the national average values found from each table to do so.</p>
-<div id="52368049" class="cell" data-execution_count="321">
+<div id="52368049" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2019</span>,<span class="dv">2024</span>):</span>
@@ -419,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="airline-performance">Airline Performance</h2>
 <p>Now that we know that air fares have not become more unaffordable, let’s look at whether airlines are performing at their usual or worse after the pandemic, which will let us know if the passenger experience is ultimately impacted by the pandemic’s reset on air activity. The below article by Forbes describes the loss of thousands of workers in the air travel field due to the pandemic’s shutdown of air activity. This may contribute to a new era of airline service that could be better or worse than before the pandemic. &gt; <a href="https://www.forbes.com/sites/jackkelly/2021/02/01/airlines-lost-over-40000-workers-united-airlines-announced-another-14000-jobs-may-be-lost/">Airlines Lost Over 400,00 Workers</a></p>
 <p>We will look at data of airline’s percentage of on-time flights from Marketing 2019 to Operating 2023 (terms used to divide operating periods). We will look at the trend of average on-time performance of U.S. aircrafts.</p>
-<div id="c57b0c17" class="cell" data-execution_count="322">
+<div id="c57b0c17" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>excel_url <span class="op">=</span> <span class="st">'https://www.bts.gov/sites/bts.dot.gov/files/2024-04/Annual%20Airline%20On-Time%20Rankings%202003-2023.xlsx'</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> pd.read_excel(excel_url, sheet_name<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sheet_names <span class="op">=</span> <span class="bu">list</span>(dfs.keys())</span>
@@ -460,7 +397,7 @@ Operating 2023 On-Time %: 78.22</code></pre>
 <h2 class="anchored" data-anchor-id="passenger-experience">Passenger Experience</h2>
 <p>Unfortunately I was unable to access the complaints data inside the consumer report. Something great to make would be frequency analysis to reveal the top common problems raised by consumers, by keeping track of the frequency of negative words. Since I was unable to use Python to properly analyze the consumer reports, I decided to go on an airline/airport review website powered by Skytrax to extract negative reviews. &gt;<a href="https://www.airlinequality.com/review-pages/a-z-airport-reviews/">Airline Equality</a></p>
 <p>The website allows consumers to leave reviews on airlines and airports. This should give us something to use sentiment analysis on and retrieve the most frequent complaints passengers had in 2023-2024 and from 2018-2019 (before pandemic). Let’s go with LAX as our airport, as LAX is a fairly large airport in the U.S. and the airport is located in a very diverse city. We will get all 2023-2024 reviews on LAX from the website’s review pages. We will use SentimentIntensityAnalyzer to determine which words are negatively associated and then count the frequencies of said words to see if we can find a pattern. Through analysis (full work shown in notebook) the graph was found to not be interesting enough, and thus it is better to jump straight to the final product: redo the sentiment analysis to pick up words from negative reviews.</p>
-<div id="bbe00fd6" class="cell" data-execution_count="323">
+<div id="bbe00fd6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
@@ -489,15 +426,8 @@ Operating 2023 On-Time %: 78.22</code></pre>
 [nltk_data]     C:\Users\kevin\AppData\Roaming\nltk_data...
 [nltk_data]   Package punkt is already up-to-date!</code></pre>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DH140_FPNB_files/figure-html/cell-6-output-2.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<div id="a27215ea" class="cell" data-execution_count="327">
+<div id="a27215ea" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># instead of counting negative words</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># count all words in negative reviews</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scrapeV3(airport):</span>
@@ -548,7 +478,7 @@ Operating 2023 On-Time %: 78.22</code></pre>
 </div>
 </div>
 <p>From the above graph, we can see that the top words used in negative reviews that can inform us are the words security, tsa, and staff. These are all words relating to the customer service of the airports in the U.S. and correlate with the high frequency of the word rude in the previous graphs. Before we do more analyzation, let’s compare this graph with the words from 2018-2019, pre-pandemic.</p>
-<div id="b0a76865" class="cell" data-execution_count="328">
+<div id="b0a76865" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scrapeV4(airport):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    reviews <span class="op">=</span> []</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    page <span class="op">=</span> <span class="dv">1</span></span>
